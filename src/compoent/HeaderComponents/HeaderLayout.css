@@ -1,0 +1,10 @@
+.navbar {
+    background-color: #131921;
+    padding: 0 2rem;
+}
+
+#header-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;    
+}
