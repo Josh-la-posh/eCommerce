@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './NavSearch.css';
 import Search from './Search';
 
-class NavSearch extends Component {
-    state = {  } 
-    render() { 
+function NavSearch({onSearch}) {
         return (
             <div className="nav-search">
-                <Search />
+                <Search onSearch={onSearch} />
             </div>
         );
-    }
+
 }
  
 export default NavSearch;

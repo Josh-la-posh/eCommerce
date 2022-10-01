@@ -1,21 +1,29 @@
-import React from 'react';
-import { Navbar } from 'reactstrap';
-import Logo from './NavLeft/Logo';
-import NavRight from './NavRight/NavRight';
+import React, {useState} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './HeaderLayout.css';
-import NavSearch from './NavSearch/NavSearch';
+import {PRODUCTS} from '../../files/products';
+import SearchDisplay from './SearchDisplay/SearchDisplay';
+import Nav from './Nav';
+import { setSearch } from '../../Redux/action';
 
 function HeaderLayout () {
+
+    const search = useSelector((state) => state.search);
+    const dispatch = useDispatch();
+    const onSearch = (e) => {dispatch(setSearch(e.target.value))};
+
+    const FilterSearch = PRODUCTS.filter((item) => {
+        return item.name.toLowerCase().includes(search)
+    });
+
     return(
         <React.Fragment>
-            <Navbar expand='md' light id='nav'>
-                <div id="header-nav" className=''>
-                    <Logo />
-                    <NavSearch />
-                    <NavRight />
-                </div>
+            <div className="header">
+                <Nav onSearch={onSearch}/>
+                <SearchDisplay search={search}
+                                FilterSearch={FilterSearch}/>
                 
-            </Navbar>            
+            </div>
         </React.Fragment>
     )
 }

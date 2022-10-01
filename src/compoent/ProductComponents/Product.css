@@ -1,7 +1,9 @@
-
 .product {
+    background-color: #fff;
+}
+
+.product-content {
     display: flex;
-    justify-content: flex-start;
     padding: 5rem 0;
 }
 
@@ -12,15 +14,11 @@
 .img-display-content {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 40px;
 }
 
 .information-display {
     flex: 1 0 50%;
-}
-
-.information-display-content {
-
 }
 
 .information-display-content p {
@@ -61,4 +59,13 @@
 
 .information-display-content .delivery {
     display: flex;
+}
+
+.product-details h6:not(first-child) {
+    display: inline;
+    margin-right: 2rem;
+}
+
+.product-details p {
+    font-size: 14px;
 }

@@ -1,1 +1,2 @@
 export const SEARCHFIELD = 'SEARCHFIELD';
+export const PRODUCTITEM = 'PRODUCTITEM';
