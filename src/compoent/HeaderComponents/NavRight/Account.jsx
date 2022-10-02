@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const Account = () => {
     return (
         <a href='' className="menu">
-            <span className='icon'><FontAwesomeIcon icon='user' /></span>
+            <span className='icon icon-left'><FontAwesomeIcon icon='user' /></span>
                 Account
             <span className='icon'><FontAwesomeIcon icon='chevron-down' /></span>
         </a>

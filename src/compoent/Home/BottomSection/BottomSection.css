@@ -20,6 +20,11 @@
 .viewed-product {
     margin: 0 .3rem;
     width: 10rem;
+    text-decoration: none;
+}
+
+.viewed-product p {
+    color: #000;
 }
 
 .product-img {

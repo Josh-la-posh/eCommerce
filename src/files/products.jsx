@@ -197,7 +197,7 @@ export const PRODUCTS = [
         name: 'HP',
         model: 'X1000',
         description: 'Wired USB Mouse with 3 Handy Buttons, Fast-Moving Scroll Wheel and Optical Sensor works on most Surfaces',
-        price: '720,000',
+        price: '4,899',
         image: '../../images/product/hpmouse.jpg',
         color: 'Black',
         product: 'Electronics',

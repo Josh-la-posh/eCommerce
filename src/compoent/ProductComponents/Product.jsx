@@ -2,10 +2,15 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Product.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { checkProduct } from '../../Redux/action';
+import { checkProduct, increaseCart, decreaseCart } from '../../Redux/action';
 
 function Product({item}) {
-    const items = useSelector(state => state.items);
+
+    const totalItem = useSelector(state => state.totalItem);
+
+    const dispatch = useDispatch();
+    const onIncrease = (item) => {dispatch(increaseCart(item))};
+    const onDecrease = (item) => {dispatch(decreaseCart(item))};
 
     return (
         <div className="product">
@@ -21,13 +26,21 @@ function Product({item}) {
                     <div className="information display">
                         <div className="information-display-content">
                             <h2>{item.name} {item.model} {item.description} {item.memory && <>({item.memory}GB) - {item.color}</>}</h2>
-                            <p>Brand: <a href="">Apple</a> | <a href="">Similar Products from Apple</a></p>
+                            <p>Brand: <a href="">{item.brand}</a> | <a href="">Similar Products from {item.brand}</a></p>
 
                             <hr />
                             
                             <h1>#{item.price}</h1>
 
-                            <button className='addToCart'><FontAwesomeIcon className='icon' icon='cart-plus' />ADD TO CART</button>
+                            {totalItem ?
+                            <div className="cart-button">
+                                <button onClick={()=>{onDecrease(item)}} >-</button>
+                                <span>{totalItem}</span>
+                                <button onClick={()=>{onIncrease(item)}} >+</button>
+                                <span>({totalItem} item(s) added)</span>
+                            </div>
+                            :
+                            <button onClick={()=>{onIncrease(item)}} className='addToCart'><FontAwesomeIcon className='icon' icon='cart-plus' />ADD TO CART</button>}
 
                             <div className="delivery">
                                 <div className="pay">
@@ -51,10 +64,10 @@ function Product({item}) {
                             <hr />
 
                             <div className="product-details">
-                                <p>Pattern name: <h6>{item.name} {item.model}</h6></p>
-                                {item.color && <p><h6>Colour:</h6>{item.color}</p>}
-                                {item.brand ? <p><h6>Brand:</h6> {item.brand}</p> : <p><h6>Brand:</h6> {item.name}</p>}
-                                {item.model && <p><h6>Model</h6>{item.name} {item.model}</p>}
+                                <div>Pattern name: <h6>{item.name} {item.model}</h6></div>
+                                {item.color && <div><h6>Colour:</h6>{item.color}</div>}
+                                {item.brand ? <div><h6>Brand:</h6> {item.brand}</div> : <div><h6>Brand:</h6> {item.name}</div>}
+                                {item.model && <div><h6>Model</h6>{item.name} {item.model}</div>}
                             </div>
 
                         </div>

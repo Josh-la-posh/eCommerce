@@ -6,16 +6,16 @@ import '../App.css';
 import FooterHeader from "./FooterComponents/FooterHeader";
 import Product from "./ProductComponents/Product";
 import { useDispatch, useSelector } from "react-redux";
-import { Action } from "@remix-run/router";
 import { checkProduct } from "../Redux/action";
 import { useParams } from "react-router-dom";
+import ShoppingCart from "./ShoppingCart/ShoppingCart";
 
 function MainComponent() {
     const items = useSelector(state => state.items);
 
     const ProductId = () => {
         const id = useParams();
-        const item=items.filter(item => item.id === parseInt(id.id))
+        const item = items.filter(item => item.id === parseInt(id.id))
         return (
             <Product item={item[0]} />
         )
@@ -26,7 +26,8 @@ function MainComponent() {
             <HeaderLayout />
             <Routes>
                 <Route index path='/' element={<Home />} />
-                <Route exact path='/product/:id' element={<ProductId  />}/>}
+                <Route exact path='/product/:id' element={<ProductId  />}/>
+                <Route path='/cart' element={<ShoppingCart />} />
             </Routes>
             <FooterHeader />
         </div>

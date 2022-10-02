@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { PRODUCTS } from '../../../files/products';
 import './BottomSection.css'
+import { Link } from 'react-router-dom';
 
 class BottomSection extends Component {
     state = {  } 
@@ -19,14 +20,14 @@ class BottomSection extends Component {
                             {PRODUCTS.map((product) => {
                                 return(
                                     (product.product !== 'mobile') &&
-                                    <div className="viewed-product" key={product.id}>
+                                    <Link to={`/product/${product.id}`} className="viewed-product" key={product.id}>
                                         <div className='product-img'><img src={product.image} /></div>
                                         <p className='desc'>{product.name} {product.model} {product.description}</p>
                                         {product.category === 'Blockbuster' && <small className='deal'>Deal of the day</small>}
                                         <p className='amt'>#{product.price}</p>
                                         <p className="text">FREE Delivery over #4,999</p>
                                         <p className='text'>Fulfilled by PoshStore.</p>
-                                    </div>
+                                    </Link>
                                 )
                             })}
                         </div>
