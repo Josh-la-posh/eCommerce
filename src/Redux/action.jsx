@@ -1,4 +1,4 @@
-import { SEARCHFIELD, PRODUCTITEM, INCREASECART, DECREASECART } from "./constant"
+import { SEARCHFIELD, PRODUCTITEM, INCREASECART, DECREASECART, REMOVEITEM } from "./constant"
 
 export const setSearch = (text) => ({
     type: SEARCHFIELD,
@@ -18,4 +18,9 @@ export const increaseCart = (item) => ({
 export const decreaseCart = (id) => ({
     type: DECREASECART,
     payload: id
+})
+
+export const removeItem = (item) => ({
+    type: REMOVEITEM,
+    payload: item
 })

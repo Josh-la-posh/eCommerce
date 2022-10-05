@@ -170,7 +170,7 @@ export const PRODUCTS = [
         name: 'boAt',
         model: 'Type C A325',
         description: 'angle-free, Sturdy Type C Cable with 3A Rapid Charging & 480mbps Data Transmission',
-        price: '7,000',
+        price: '7000',
         image: '../../images/product/boAt325.jpg',
         color: 'Black',
         product: 'Electronics',

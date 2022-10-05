@@ -23,6 +23,10 @@
     background-color: #eee;
 }
 
+.yes-card .card .card-title {
+    margin: .5rem 0 0 .5rem;
+}
+
 .yes-card .card-body {
     display: flex;
     justify-content: space-around;
@@ -35,4 +39,41 @@
 
 .yes-card .card-body .card-body-image img {
     width: 3.5rem;
+}
+
+@media (max-width: 997px) {
+    
+    .mid-display-content .no-card {
+        margin-bottom: 2rem;
+    }
+    
+    .mid-display-content .yes-card {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .yes-card .card {
+        width: 100%;
+    }
+    
+    .yes-card .card-body > div:not(:first-child) {
+        display: none;
+    }
+
+    .yes-card .card-body {
+        /* width: 80%; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+    }
+    
+    .yes-card .card-body .card-body-image {
+        width: 10rem;
+        padding: 1rem;
+    }
+    
+    .yes-card .card-body .card-body-image img {
+        width: 3.5rem;
+    }
 }

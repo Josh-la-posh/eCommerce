@@ -8,10 +8,10 @@ import App from './App';
 import { reducer } from './Redux/reducer';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faChevronDown, faUser, faStar, faMagnifyingGlass, faCircleQuestion, faCartShopping, faCartPlus, faChevronRight, faMobile, faLaptop, faVolleyball, faGamepad, faShirt, faCarSide, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faUser, faStar, faMagnifyingGlass, faCircleQuestion, faCartShopping, faCartPlus, faChevronRight, faMobile, faLaptop, faVolleyball, faGamepad, faShirt, faCarSide, faEllipsis, faTrash } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faChevronDown, faUser, faStar, faMagnifyingGlass, faCircleQuestion, faCartShopping, faCartPlus, faChevronRight, faMobile, faLaptop, faVolleyball, faGamepad, faShirt, faCarSide, faEllipsis)
-
+library.add(faChevronDown, faUser, faStar, faMagnifyingGlass, faCircleQuestion, faCartShopping, faCartPlus, faChevronRight, faMobile, faLaptop, faVolleyball, faGamepad, faShirt, faCarSide, faEllipsis, faTrash)
+// const thunk =  applyMiddleware
 const store = createStore(reducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

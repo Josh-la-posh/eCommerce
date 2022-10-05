@@ -33,5 +33,23 @@ function MainComponent() {
         </div>
     );
 }
+
+
+// // Sample Code 
+
+// function Product() {
+
+//     const {id} = useParams();
+
+//     const productItem = useSelector(state => state.items.filter(item => item.id === parseInt(id)))[0];
+
+  
+//         return (
+//             <Product item={productItem} />
+//         )
+
+
+
+// }
  
 export default MainComponent;

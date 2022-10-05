@@ -6,7 +6,7 @@ import { checkProduct, increaseCart, decreaseCart } from '../../Redux/action';
 
 function Product({item}) {
 
-    const totalItem = useSelector(state => state.totalItem);
+    // const quantity = useSelector(state => state.quantity);
 
     const dispatch = useDispatch();
     const onIncrease = (item) => {dispatch(increaseCart(item))};
@@ -32,12 +32,12 @@ function Product({item}) {
                             
                             <h1>#{item.price}</h1>
 
-                            {totalItem ?
+                            {item.quantity ?
                             <div className="cart-button">
                                 <button onClick={()=>{onDecrease(item)}} >-</button>
-                                <span>{totalItem}</span>
+                                <span>{item.quantity}</span>
                                 <button onClick={()=>{onIncrease(item)}} >+</button>
-                                <span>({totalItem} item(s) added)</span>
+                                <span>({item.quantity} item(s) added)</span>
                             </div>
                             :
                             <button onClick={()=>{onIncrease(item)}} className='addToCart'><FontAwesomeIcon className='icon' icon='cart-plus' />ADD TO CART</button>}
