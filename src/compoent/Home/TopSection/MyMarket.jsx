@@ -22,12 +22,12 @@ class MyMarket extends Component {
                 </div>
                 <div className="main-content col-lg-3 col-md-3">
 
-                    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                        <ol className="carousel-indicators">
-                            <li data-bs-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                            <li data-bs-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-bs-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
+                    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+                        <div className="carousel-indicators">
+                            <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label='Slide-1'></div>
+                            <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label='Slide-2'></div>
+                            <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label='Slide-3'></div>
+                        </div>
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                             <img className="d-block w-100" src="../../images/product/fogg.jpg" alt="First slide" />
@@ -39,14 +39,14 @@ class MyMarket extends Component {
                             <img className="d-block w-100" src="..." alt="Third slide" />
                             </div>
                         </div>
-                        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <button className="carousel-control-prev" data-bs-target="#carouselExampleIndicators" type='button' data-bs-slide="prev">
                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Previous</span>
-                        </a>
-                        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span className="visually hidden">Previous</span>
+                        </button>
+                        <button className="carousel-control-next" data-bs-target="#carouselExampleIndicators" type='button' data-bs-slide="next">
                             <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Next</span>
-                        </a>
+                            <span className="visually hidden">Next</span>
+                        </button>
                     </div>
 
                 </div>

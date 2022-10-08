@@ -1,5 +1,5 @@
+import * as ActionTypes from './ActionTypes';
 import { PRODUCTS } from "../files/products";
-import { INCREASECART, DECREASECART, PRODUCTITEM, SEARCHFIELD, REMOVEITEM } from "./constant"
 
 const initialState = {
     search: '',
@@ -9,42 +9,22 @@ const initialState = {
 
 }
 
-export const reducer = (state=initialState, action) => {
+export const Reducer = (state=initialState, action) => {
     switch(action.type) {
-        case SEARCHFIELD:
+        case ActionTypes.SEARCHFIELD:
             return {
                 ...state,
-                search: action.payload,
+                search: action.payload
             };
-        case PRODUCTITEM:
-            return filterItem(state, action)
-        case INCREASECART:
+        case ActionTypes.INCREASECART:
             return increaseCart(state,action)
-        case DECREASECART:
+        case ActionTypes.DECREASECART:
             return decreaseCart(state,action)
-        case REMOVEITEM:
+        case ActionTypes.REMOVEITEM:
             return removeItem(state,action)
-        
 
         default:
             return state
-    }
-}
-
-const filterItem = (state, action) => {
-    const currentItems = [...state.items];
-    const index = currentItems.indexOf(action.payload);
-    const existingItem = currentItems[index];
-
-    let updateProduct = {
-        ...existingItem,
-        id: action.payload.id
-    }
-    currentItems[index] = updateProduct;
-    
-    return {
-        ...state,
-        items: currentItems
     }
 }
 
@@ -72,8 +52,8 @@ const increaseCart = (state, action) => {
 
     console.log(updateCart.quantity);
     
-    const _updateCart = updateCart.quantity && localStorage.setItem(action.payload.id, JSON.stringify(updateCart.quantity))
-    const _totalItem = localStorage.setItem('Total Item', JSON.stringify(totalItem));
+    const _updateCart = updateCart.quantity && localStorage.setItem(action.payload.id, JSON.stringify(updateCart.quantity));
+    // const _totalItem = localStorage.setItem('Total Item', JSON.stringify(totalItem));
 
     return {
         ...state,

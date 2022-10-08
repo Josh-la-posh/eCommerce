@@ -4,11 +4,12 @@ import './HeaderLayout.css';
 import {PRODUCTS} from '../../files/products';
 import SearchDisplay from './SearchDisplay/SearchDisplay';
 import Nav from './Nav';
-import { setSearch } from '../../Redux/action';
+import { setSearch } from '../../Redux/ActionCreator';
 
 function HeaderLayout () {
 
-    const search = useSelector((state) => state.search);
+    const search = useSelector((state) => state.reducer.search);
+
     const dispatch = useDispatch();
     const onSearch = (e) => {dispatch(setSearch(e.target.value))};
 

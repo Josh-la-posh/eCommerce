@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Product.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { checkProduct, increaseCart, decreaseCart } from '../../Redux/action';
+import { checkProduct, increaseCart, decreaseCart } from '../../Redux/ActionCreator';
 
 function Product({item}) {
 

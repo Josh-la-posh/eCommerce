@@ -6,12 +6,11 @@ import '../App.css';
 import FooterHeader from "./FooterComponents/FooterHeader";
 import Product from "./ProductComponents/Product";
 import { useDispatch, useSelector } from "react-redux";
-import { checkProduct } from "../Redux/action";
 import { useParams } from "react-router-dom";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 
 function MainComponent() {
-    const items = useSelector(state => state.items);
+    const items = useSelector(state => state.reducer.items);
 
     const ProductId = () => {
         const id = useParams();

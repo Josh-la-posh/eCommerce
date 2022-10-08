@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from 'react-redux';
 
 export const Cart = () => {
-    const totalItem = useSelector(state => state.totalItem);
+    const totalItem = useSelector(state => state.reducer.totalItem);
     return (
         <a href='/cart' className="menu">
             <span className='icon icon-left'><FontAwesomeIcon icon='cart-shopping' />
