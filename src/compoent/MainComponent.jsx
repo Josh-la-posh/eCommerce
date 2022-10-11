@@ -5,7 +5,7 @@ import Home from "./Home/HomeLayout";
 import '../App.css';
 import FooterHeader from "./FooterComponents/FooterHeader";
 import Product from "./ProductComponents/Product";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 
@@ -26,7 +26,7 @@ function MainComponent() {
             <Routes>
                 <Route index path='/' element={<Home />} />
                 <Route exact path='/product/:id' element={<ProductId  />}/>
-                <Route path='/cart' element={<ShoppingCart />} />
+                <Route exact path='/cart' element={<ShoppingCart />} />
             </Routes>
             <FooterHeader />
         </div>

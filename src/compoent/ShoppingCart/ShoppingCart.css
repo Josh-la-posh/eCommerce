@@ -23,6 +23,11 @@
     /* margin-bottom: 1rem; */
 }
 
+.shopping-cart .price {
+    display: inline;
+    color: #000;
+}
+
 .cart-left-items {
     display: flex;
     padding: 1rem;

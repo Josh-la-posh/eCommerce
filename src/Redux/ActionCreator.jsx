@@ -1,6 +1,5 @@
 import * as ActionTypes from './ActionTypes'
 import { PRODUCTS } from "../files/products";
-import { CarouselControl } from 'reactstrap';
 
 export const setSearch = (text) => ({
     type: ActionTypes.SEARCHFIELD,

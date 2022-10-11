@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { addToCart, removeFromCart, reduceCart } from '../../Redux/ActionCreator';
 import './ShoppingCart.css';
 
@@ -61,12 +61,12 @@ class ShoppingCart extends Component {
                                                     <button onClick={()=>{addToCart(item)}} >+</button>
                                                 </div>
                                             </div>
-                                            <hr />
-                                            {item.quantity ? <div className="text-right">Subtotal (item): <h4>{item.quantity}</h4></div> : <div></div>}
+                                            <hr />                                            
                                         </div>
                                     </div>                        
                                 )
-                            })}           
+                            })}
+                            <div className="text-right">Subtotal ({totalItem} item): <p className='price'><strong>Price</strong></p></div>
                         </div>
 
                         <div className="cart-right"></div>
