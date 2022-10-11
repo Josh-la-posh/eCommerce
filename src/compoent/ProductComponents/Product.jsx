@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Product.css';
 import { connect } from 'react-redux';
-import { reduceCart, addToCart, fetchProduct, removeFromCart } from '../../Redux/ActionCreator';
+import { reduceCart, addToCart, fetchProduct } from '../../Redux/ActionCreator';
 
 const mapStateToProps = (state) => ({
     product: state.product,
@@ -47,7 +47,7 @@ class Product extends Component {
                         <div className="information display">
                             <div className="information-display-content">
                                 <h2>{item.name} {item.model} {item.description} {item.memory && <>({item.memory}GB) - {item.color}</>}</h2>
-                                <p>Brand: <a href="">{item.brand}</a> | <a href="">Similar Products from {item.brand}</a></p>
+                                <p>Brand: <a href="/">{item.brand}</a> | <a href="/">Similar Products from {item.brand}</a></p>
 
                                 <hr />
                                 

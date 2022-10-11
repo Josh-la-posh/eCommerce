@@ -1,7 +1,6 @@
-import React, {Component, useEffect} from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { PRODUCTS } from '../../../files/products';
 import {fetchProduct} from '../../../Redux/ActionCreator'
 import './Blockbuster.css';
 import { Loading } from '../../LoadingComponent';
@@ -74,26 +73,8 @@ class Blockbuster extends Component {
                     </section>
                 </div>
             );
-        } else {
-            return
-                <div></div>
         }
     }
 }
 
-// function Blockbuster() {
-//     const items = useSelector(state => state.reducer.items);
-//     const product = useSelector(state => state.product)
-    
-//     const dispatch = useDispatch();
-//     const fetchProduct = () => {dispatch(fetchProduct())};
-    
-//     useEffect(() => {        
-//         fetchProduct
-//     }, []);
-
-
-    
-// }
- 
 export default connect(mapStateToProps, mapDispatchToProps)(Blockbuster);

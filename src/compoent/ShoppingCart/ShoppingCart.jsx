@@ -47,7 +47,6 @@ class ShoppingCart extends Component {
                                                 <h6>POSH <span>EXPRESS</span></h6>
                                                 <p>Posh Express item in your order will be delivered for free (Lagos, Abuja and Anambra only excluding large items)</p>
                                             </div>
-                                            <h4></h4>
                                         </div>
                                         <div className="cart-account">
 

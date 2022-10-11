@@ -21,7 +21,7 @@ class BottomSection extends Component {
                                 return(
                                     (product.product !== 'mobile') &&
                                     <Link to={`/product/${product.id}`} className="viewed-product" key={product.id}>
-                                        <div className='product-img'><img src={product.image} /></div>
+                                        <div className='product-img'><img src={product.image} alt='' /></div>
                                         <p className='desc'>{product.name} {product.model} {product.description}</p>
                                         {product.category === 'Blockbuster' && <small className='deal'>Deal of the day</small>}
                                         <p className='amt'>#{product.price}</p>
@@ -41,7 +41,7 @@ class BottomSection extends Component {
                 <div className="signUp-content">
                     <p>See personalized recommendations</p>
                     <button className="">Sign In</button>
-                    <p>New customer? <span><a href="">Start here.</a></span></p>
+                    <p>New customer? <span><a href="/">Start here.</a></span></p>
                 </div>
 
                 <hr />
