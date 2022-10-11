@@ -3,18 +3,14 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { Reducer } from "./reducer";
 import { Product } from "./product";
-
-
-// export default combineReducers({
-//     reducer: Reducer,
-//     product: Product
-// })
+import { Cart } from "./addToCart";
 
 export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
             reducer: Reducer,
             product: Product,
+            cart: Cart,
         }),
         applyMiddleware(thunk, logger)
         );
